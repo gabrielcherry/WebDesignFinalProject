@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply to adopt a pet from Second Chance Shelter.">
+    <title>Application | Second Chance Shelter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container nav-flex">
+            <div class="logo">
+                <h1>Second Chance 🐾</h1>
+            </div>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="apply.html" class="current" aria-current="page">Application</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-pattern">
+            <div class="container form-container">
+                <h2 class="page-title">Adoption Application</h2>
+                <p>Please fill out the form below to start the process.</p>
+                
+                <form id="adoptionForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <!-- Conditional Logic Trigger -->
+                    <fieldset class="form-group">
+                        <legend>Do you currently own other pets?</legend>
+                        <label>
+                            <input type="radio" name="hasPets" value="no" checked> No
+                        </label>
+                        <label>
+                            <input type="radio" name="hasPets" value="yes" id="radioYes"> Yes
+                        </label>
+                    </fieldset>
+
+                    <!-- Hidden Section -->
+                    <div id="petDetails" class="form-group hidden">
+                        <label for="petInfo">Please list their names and species:</label>
+                        <textarea id="petInfo" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="btn-submit">Submit Application</button>
+                    <p id="statusMsg" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Second Chance Shelter. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script included only on the page that needs it -->
+    <script src="app.js"></script>
+
+</body>
+</html>
